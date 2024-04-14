@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="apiGateway-js-sdk/lib/axios/dist/axios.standalone.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="apiGateway-js-sdk/lib/CryptoJS/rollups/hmac-sha256.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="apiGateway-js-sdk/lib/CryptoJS/rollups/sha256.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="apiGateway-js-sdk/lib/CryptoJS/components/hmac.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="apiGateway-js-sdk/lib/CryptoJS/components/enc-base64.js"
+    ></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.879.0.min.js"></script>
+    <script
+      type="text/javascript"
+      src="apiGateway-js-sdk/lib/url-template/url-template.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="apiGateway-js-sdk/lib/apiGatewayCore/sigV4Client.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="apiGateway-js-sdk/lib/apiGatewayCore/apiGatewayClient.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="apiGateway-js-sdk/lib/apiGatewayCore/simpleHttpClient.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="apiGateway-js-sdk/lib/apiGatewayCore/utils.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="apiGateway-js-sdk/apigClient.js"
+    ></script>
+    <script src="index.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <h2>Search Photos</h2>
+      <form>
+        <input
+          name="search_input"
+          id="search_input"
+          type="text"
+          placeholder="Search Query"
+        />
+      </form>
+      <button type="button" onclick="photoSearch()">Search</button>
+    </div>
+
+    <div id="search_results"></div>
+    <h2>Upload Photo</h2>
+    <div>
+      <form>
+        <input type="file" id="file_input" />
+        <input
+          type="text"
+          id="custom_labels"
+          name="custom_labels"
+          placeholder="Custom labels"
+        />
+        <label for="custom_labels"
+          ><i>(multiple labels must be separated with a comma)</i></label
+        >
+      </form>
+      <br />
+      <button onclick="photoUpload()">Upload Photo</button>
+      <div>
+        <p id="uploadSuccessText"></p>
+      </div>
+    </div>
+  </body>
+</html>
